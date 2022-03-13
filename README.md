@@ -25,20 +25,41 @@ https://github.com/01-lzx-05/GeoFracture
    
 （2）<u>目标检测（效果很差）</u>
 
-  yolov3：详细笔记见ipad GoodNotes的yolo
+  --yolov3：详细笔记见ipad GoodNotes的yolo
 
     测试./darknet detector test cfg/geogracture.data cfg/yolov3.cfg backup/yolov3_20000.weights data/0001.jpg -thresh 0.4
 
-  SSD:
+  --SSD:
     
     backbone:Resnet34；学习率：自动选择最佳
     
    效果很差，loss和currect图十分极端，只要有阴影的地方都会标记为地裂缝
   
   
-（3）<u>目标检测</u>
+（3）<u>像素分类</u>
+  
+  --U-net:
+  
+      backbone:Resnet34；学习率：自动选择最佳；二分类
+      
+      结果：较上面有很大提升，由于数据集标注不够精准，在结果中裂缝的标注范围偏大，需要修改数据集
   
   
+ **3**、**本周完成任务如下**
   
-  **3**、**本周完成任务如下**
-  （1）
+在训练和测试过程中发现自身对神经网络和深度学习的了解还不够透彻，无法对模型应用以自己的想法，开始学习之旅
+  
+（1）计算机视觉中的特征工程
+  
+（2）图像分类网络模型框架
+ 
+ --vggnet：多卷积层串联结构，代码见classify中vggnet.py
+ 
+ --resnet: 残差块基本单元包括主分支和跳连分支，out=out1+out2,，代码见classify中Resnet.py
+ 
+ --mobilenetv1:轻量级，深度可分离卷积+住店卷积，代码见classify中mobilenetv1.py
+ 
+ --inceptionMolule:并联网络，代码见classify中inceptionMolule.py
+ 
+ 
+  
